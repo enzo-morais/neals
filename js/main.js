@@ -13,6 +13,16 @@
         });
     }
     function num(i) { return (i + 1 < 10 ? '0' : '') + (i + 1); }
+    function brl(v) { return 'R$ ' + v.toFixed(2).replace('.', ','); }
+    function onSale(p) { return typeof p.preco === 'number' && typeof p.precoAntigo === 'number' && p.precoAntigo > p.preco; }
+    // Preço com o "de" riscado quando tem promoção
+    function priceHTML(p, big) {
+        if (typeof p.preco !== 'number') return 'CONSULTE';
+        if (!onSale(p)) return brl(p.preco);
+        var off = Math.round((1 - p.preco / p.precoAntigo) * 100);
+        return '<s class="price-old">' + brl(p.precoAntigo) + '</s> <span class="price-now">' + brl(p.preco) + '</span>' +
+            (big ? ' <span class="price-off">-' + off + '%</span>' : '');
+    }
     function price(p) {
         return typeof p.preco === 'number' ? 'R$ ' + p.preco.toFixed(2).replace('.', ',') : 'CONSULTE';
     }
@@ -64,7 +74,7 @@
                 heroList.map(function (x, k) {
                     return '<img class="hero-slide' + (k ? '' : ' on') + '" src="' + esc(x.p.imagens[0]) + '" alt="' + esc(x.p.nome) + '"' + (k ? ' loading="lazy"' : '') + '>';
                 }).join('') +
-                '<button class="hero-caption" type="button"><span class="hero-cap-num"></span><span class="hero-cap-name"></span><b>VER PEÇA →</b></button>' +
+                '<button class="hero-caption" type="button"><span class="hero-cap-num"></span><span class="hero-cap-name"></span><span class="hero-cap-price"></span><b>VER PEÇA →</b></button>' +
                 (heroList.length > 1 ? '<div class="hero-dots">' + heroList.map(function (x, k) {
                     return '<button type="button" aria-label="' + esc(x.p.nome) + '"' + (k ? '' : ' class="on"') + '><i></i></button>';
                 }).join('') + '</div>' : '') +
@@ -87,6 +97,7 @@
             var x = heroList[cur];
             hero.querySelector('.hero-cap-num').textContent = num(x.i);
             hero.querySelector('.hero-cap-name').textContent = x.p.nome;
+            hero.querySelector('.hero-cap-price').innerHTML = typeof x.p.preco === 'number' ? priceHTML(x.p) : '';
         }
         function play() { stop(); if (!reduce && heroList.length > 1) timer = setInterval(function () { go(cur + 1); }, delay); }
         function stop() { if (timer) clearInterval(timer); timer = null; }
@@ -112,7 +123,7 @@
             '</div>' +
             '<div class="card-info">' +
                 '<h3>' + esc(p.nome) + '</h3>' +
-                '<span class="card-price">' + price(p) + '</span>' +
+                '<span class="card-price">' + priceHTML(p) + '</span>' +
             '</div>' +
             '<span class="card-more">VER PEÇA <b>→</b></span>' +
         '</a>';
@@ -162,7 +173,7 @@
         lastFocus = document.activeElement;
         document.getElementById('mNum').textContent = '// ' + C.drop + ' — ' + num(i);
         document.getElementById('mName').textContent = current.nome;
-        document.getElementById('mPrice').textContent = current.esgotado ? 'ESGOTADO' : price(current);
+        document.getElementById('mPrice').innerHTML = current.esgotado ? 'ESGOTADO' : priceHTML(current, true);
         document.getElementById('mDesc').textContent = current.descricao || '';
         document.getElementById('mDetails').innerHTML = (current.detalhes || []).map(function (d) { return '<li>' + esc(d) + '</li>'; }).join('');
 

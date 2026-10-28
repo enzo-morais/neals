@@ -25,6 +25,7 @@ var NEALS = {
        - imagens: coloque os arquivos na pasta img/ e liste aqui (a 1ª é a frente, a 2ª as costas...).
          Enquanto a lista estiver vazia, aparece uma animação no lugar da foto.
        - preco: número (ex.: 149.9) ou null pra mostrar "CONSULTE".
+       - precoAntigo: preço "de" que aparece riscado ao lado (ex.: 84.9). Use null quando não tiver promoção.
        - tag: texto pequeno no canto do card (ex.: 'NOVO', 'ÚLTIMAS') ou null.
        - esgotado: true mostra a camisa como esgotada.
        - mensagem: o que vai escrito no WhatsApp desta camisa. Pode ser:
@@ -43,7 +44,8 @@ var NEALS = {
                 'GG': 'Fala! Quero a NEALSTREET no GG. Ainda tem esse tamanho?'
             },
             nome: 'NEALSTREET',
-            preco: null,
+            preco: 69.90,
+            precoAntigo: 84.90, // aparece riscado ("de R$ 84,90 por R$ 69,90"); null = sem promoção
             tag: 'NOVO',
             destaque: false, // destaque = aparece primeiro no topo do site
             esgotado: false,
@@ -62,7 +64,8 @@ var NEALS = {
                 'GG': 'Fala! Quero a Neals Script no GG. Ainda tem esse tamanho?'
             },
             nome: 'Neals Script',
-            preco: null,
+            preco: 69.90,
+            precoAntigo: 84.90, // aparece riscado ("de R$ 84,90 por R$ 69,90"); null = sem promoção
             tag: 'NOVO',
             destaque: false, // destaque = aparece primeiro no topo do site
             esgotado: false,
@@ -81,7 +84,8 @@ var NEALS = {
                 'GG': 'Fala! Quero a NEAL® Triangle no GG. Ainda tem esse tamanho?'
             },
             nome: 'NEAL® Triangle',
-            preco: null,
+            preco: 69.90,
+            precoAntigo: 84.90, // aparece riscado ("de R$ 84,90 por R$ 69,90"); null = sem promoção
             tag: null,
             destaque: false, // destaque = aparece primeiro no topo do site
             esgotado: false,
@@ -100,7 +104,8 @@ var NEALS = {
                 'GG': 'Fala! Quero a Make a Lot of Money no GG. Ainda tem esse tamanho? 💸'
             },
             nome: 'Make a Lot of Money',
-            preco: null,
+            preco: 69.90,
+            precoAntigo: 84.90, // aparece riscado ("de R$ 84,90 por R$ 69,90"); null = sem promoção
             tag: null,
             destaque: true, // destaque = aparece primeiro no topo do site
             esgotado: false,
@@ -119,7 +124,8 @@ var NEALS = {
                 'GG': 'Fala! Quero a Creative Co no GG. Ainda tem esse tamanho?'
             },
             nome: 'Creative Co',
-            preco: null,
+            preco: 69.90,
+            precoAntigo: 84.90, // aparece riscado ("de R$ 84,90 por R$ 69,90"); null = sem promoção
             tag: null,
             destaque: false, // destaque = aparece primeiro no topo do site
             esgotado: false,

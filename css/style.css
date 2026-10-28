@@ -93,6 +93,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     background: linear-gradient(to top, rgba(0,0,0,.75), transparent); font-family: var(--display); }
 .hero-cap-num { font-size: .72rem; font-weight: 700; color: var(--accent); letter-spacing: .1em; }
 .hero-cap-name { flex: 1; font-weight: 600; font-size: 1rem; }
+.hero-cap-price { font-size: .9rem; white-space: nowrap; }
+@media (max-width: 720px) { .hero-caption b { display: none; } }
 .hero-caption b { font-size: .62rem; letter-spacing: .2em; color: var(--muted); transition: color .2s; }
 .hero-caption:hover b { color: #fff; }
 .hero-dots { position: absolute; top: 14px; left: 14px; right: 14px; z-index: 4; display: flex; gap: 6px; }
@@ -160,6 +162,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .card:hover .card-more { color: var(--accent); }
 .card:hover .card-more b { transform: translateX(4px); }
 .card.is-out .stage > *:not(.card-tag):not(.card-num) { opacity: .45; filter: grayscale(1); }
+
+/* ---------- PREÇO PROMOCIONAL ---------- */
+.price-old { color: #6b6b73; font-weight: 500; font-size: .82em; text-decoration-thickness: 1px; margin-right: .2em; }
+.price-now { color: var(--text); font-weight: 700; }
+.price-off { display: inline-block; vertical-align: middle; margin-left: .35rem; background: var(--accent); color: #fff; font-size: .62rem; font-weight: 700; letter-spacing: .1em; padding: .3em .55em; position: relative; top: -.1em; }
+.modal-price .price-old { font-size: .7em; }
 
 /* ---------- SOBRE ---------- */
 .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
