@@ -47,9 +47,9 @@ var NEALS = {
             tag: 'NOVO',
             destaque: false, // destaque = aparece primeiro no topo do site
             esgotado: false,
-            descricao: 'Logo NEALSTREET bordado em branco no centro do peito. Básica, limpa, vai com tudo.',
+            descricao: 'Logo NEALSTREET estampado em branco no centro do peito. Básica, limpa, vai com tudo.',
             tamanhos: ['P', 'M', 'G', 'GG'],
-            detalhes: ['Estampa central no peito'],
+            detalhes: ['Estampa em DTF', 'Estampa central no peito'],
             imagens: ['img/neals-01-frente.webp', 'img/neals-01-lado.webp']
         },
         {
@@ -68,7 +68,7 @@ var NEALS = {
             esgotado: false,
             descricao: 'Assinatura "Neals" em letra cursiva preta, tom sobre tom no cinza. Discreta e elegante.',
             tamanhos: ['P', 'M', 'G', 'GG'],
-            detalhes: ['Estampa no lado esquerdo do peito'],
+            detalhes: ['Estampa em DTF', 'Estampa no lado esquerdo do peito'],
             imagens: ['img/neals-02-frente.webp', 'img/neals-02-lado.webp']
         },
         {
@@ -87,7 +87,7 @@ var NEALS = {
             esgotado: false,
             descricao: 'Logo NEAL® em branco com o triângulo vermelho. Contraste forte na camiseta preta.',
             tamanhos: ['P', 'M', 'G', 'GG'],
-            detalhes: ['Estampa no lado esquerdo do peito'],
+            detalhes: ['Estampa em DTF', 'Estampa no lado esquerdo do peito'],
             imagens: ['img/neals-03-frente.webp', 'img/neals-03-lado.webp']
         },
         {
@@ -106,7 +106,7 @@ var NEALS = {
             esgotado: false,
             descricao: 'NEALS® com a frase "Make a lot of money" em rosa claro. O recado tá dado.',
             tamanhos: ['P', 'M', 'G', 'GG'],
-            detalhes: ['Estampa no lado esquerdo do peito'],
+            detalhes: ['Estampa em DTF', 'Estampa no lado esquerdo do peito'],
             imagens: ['img/neals-04-frente.webp', 'img/neals-04-lado.webp']
         },
         {
@@ -125,7 +125,7 @@ var NEALS = {
             esgotado: false,
             descricao: 'Logo com a faixa azul e "Creative Co". Cor terrosa que foge do óbvio.',
             tamanhos: ['P', 'M', 'G', 'GG'],
-            detalhes: ['Estampa no lado esquerdo do peito'],
+            detalhes: ['Estampa em DTF', 'Estampa no lado esquerdo do peito'],
             imagens: ['img/neals-05-frente.webp', 'img/neals-05-lado.webp']
         }
     ]
