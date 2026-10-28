@@ -31,6 +31,10 @@ git diff --cached --quiet && (
 )
 
 echo.
+echo  Baixando o que mudou no GitHub (se tiver)...
+git pull --rebase origin main
+
+echo.
 echo  Enviando pro GitHub... (se pedir login, entre com a conta enzo-morais)
 git push -u origin main
 if %errorlevel%==0 (
